@@ -1,4 +1,6 @@
 node_modules/
 package-lock.json
 .env
-build/
+build/static
+build/asset-manifest.json
+build/service-worker.js
