@@ -1,0 +1,9 @@
+import * as reducers from './reducers';
+
+describe('preferences Reducers', () => {
+  it('preferences should set default state', () => {
+    const expectation = {};
+
+    expect(reducers.preferences(undefined, {})).toEqual(expectation);
+  });
+});
