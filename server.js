@@ -1,19 +1,20 @@
 const path = require('path');
 const express = require('express');
 
-// const environment = process.env.NODE_ENV || 'development';
-// const configuration = require('./knexfile')[environment];
-// const database = require('knex')(configuration);
+const environment = process.env.NODE_ENV || 'development';
+const configuration = require('./knexfile')[environment];
+// eslint-disable-next-line
+const database = require('knex')(configuration);
 
 const app = express();
 const bodyParser = require('body-parser');
 
+// eslint-disable-next-line
 const requireHTTPS = (request, response, next) => {
   if (request.header('x-forwarded-proto') !== 'https') {
     return response.redirect(`https://${request.header('host')}${request.url}`);
   }
   next();
-  return true;
 };
 if (process.env.NODE_ENV === 'production') { app.use(requireHTTPS); }
 
