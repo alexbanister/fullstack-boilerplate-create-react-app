@@ -17,7 +17,6 @@
     "test": "npm-run-all testserver testreactci lint",
     "eject": "react-scripts eject",
     "lint": "./node_modules/.bin/eslint ./",
-    "postinstall": "react-scripts build",
     "build-css": "node-sass-chokidar src/ -o src/",
     "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive",
     "start-js": "react-scripts start",
