@@ -14,7 +14,7 @@
     "testserver": "NODE_ENV=test mocha --exit",
     "testreactci": "CI=true react-scripts test --env=jsdom",
     "testreact": "react-scripts test --env=jsdom",
-    "test": "npm-run-all testserver testreactci lint",
+    "test": "npm-run-all testserver testreactci",
     "eject": "react-scripts eject",
     "lint": "./node_modules/.bin/eslint ./",
     "build-css": "node-sass-chokidar src/ -o src/",
