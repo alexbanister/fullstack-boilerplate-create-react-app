@@ -1,7 +1,7 @@
 import * as actions from './actions';
 
 describe('Preferences action', ()=>{
-  it('SAVE_PREFERENCES should take object return an action', () => {
+  it.skip('SAVE_PREFERENCES should take object return an action', () => {
     const preferences = {
       minLayover: 1
     };
