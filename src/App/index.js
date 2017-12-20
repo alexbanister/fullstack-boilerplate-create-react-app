@@ -6,7 +6,7 @@ class App extends Component {
   render() {
     return (
       <div className="app">
-        <header>Header</header>
+        <header>Header!</header>
         <main>
           <Route
             exact path='/'
