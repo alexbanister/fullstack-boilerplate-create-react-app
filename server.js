@@ -21,7 +21,7 @@ if (process.env.NODE_ENV === 'production') { app.use(requireHTTPS); }
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.get('/', (request, response) => {
-  response.sendFile(path.join(__dirname, '/build', 'index.html'));
+  response.sendFile(path.join(__dirname, '/build'));
 });
 app.set('port', process.env.PORT || 4000);
 
