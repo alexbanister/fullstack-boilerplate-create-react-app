@@ -8,7 +8,6 @@
   "proxy": "http://localhost:4000",
   "main": "index.js",
   "scripts": {
-    "heroku-prebuild": "npm-run-all migrate seed",
     "migrate": "knex migrate:latest",
     "seed": "knex seed:run",
     "testserver": "NODE_ENV=test mocha --exit",
