@@ -6,3 +6,11 @@ export const questions = (store = [], action) => {
     return store;
   }
 };
+export const thing = (store = [], action) => {
+  switch (action.type) {
+  case 'THING':
+    return [...store, ...action.questions];
+  default:
+    return store;
+  }
+};

@@ -1,6 +1,6 @@
 import { shallow } from 'enzyme';
-import Welcome from './index';
 import React from 'react';
+import Welcome from './index';
 
 
 describe('Welcome', () => {

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
 
 class Welcome extends Component {
@@ -15,8 +15,16 @@ class Welcome extends Component {
 
 Welcome.propTypes = {};
 
-const mapStateToProps = (store) => ({});
+const mapStateToProps = (store) => {
+  return {
+    store
+  };
+};
 
-const mapDispatchToProps = (dispatch) => ({});
+const mapDispatchToProps = (dispatch) => {
+  return {
+    dispatch
+  };
+};
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Welcome));

@@ -1,8 +1,9 @@
+const path = require('path');
 const express = require('express');
 
-const environment = process.env.NODE_ENV || 'development';
-const configuration = require('./knexfile')[environment];
-const database = require('knex')(configuration);
+// const environment = process.env.NODE_ENV || 'development';
+// const configuration = require('./knexfile')[environment];
+// const database = require('knex')(configuration);
 
 const app = express();
 const bodyParser = require('body-parser');
@@ -12,12 +13,15 @@ const requireHTTPS = (request, response, next) => {
     return response.redirect(`https://${request.header('host')}${request.url}`);
   }
   next();
+  return true;
 };
 if (process.env.NODE_ENV === 'production') { app.use(requireHTTPS); }
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static(__dirname + '/build'));
+app.get('/', (request, response) => {
+  response.sendFile(path.join(__dirname, '/build', 'index.html'));
+});
 app.set('port', process.env.PORT || 4000);
 
 app.locals.title = 'APP NAME';
