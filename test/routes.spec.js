@@ -16,7 +16,7 @@ describe('Client Routes', () => {
     return chai.request(server)
       .get('/')
       .then((response) => {
-        response.should.be.html();
+        response.should.be.html;
       })
       .catch((err) => {
         throw err;
