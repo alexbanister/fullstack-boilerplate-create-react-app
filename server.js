@@ -1,3 +1,4 @@
+const path = require('path');
 const express = require('express');
 
 const environment = process.env.NODE_ENV || 'development';
@@ -19,7 +20,9 @@ if (process.env.NODE_ENV === 'production') { app.use(requireHTTPS); }
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static('/build/'));
+app.get('/', (request, response) => {
+  response.sendFile(path.join(__dirname, '/build'));
+});
 app.set('port', process.env.PORT || 4000);
 
 app.locals.title = 'APP NAME';
