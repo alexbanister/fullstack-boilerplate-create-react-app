@@ -19,8 +19,7 @@ if (process.env.NODE_ENV === 'production') { app.use(requireHTTPS); }
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-// eslint-disable-next-line
-app.use(express.static(__dirname + '/build/*'));
+app.use(express.static('/build/'));
 app.set('port', process.env.PORT || 4000);
 
 app.locals.title = 'APP NAME';
