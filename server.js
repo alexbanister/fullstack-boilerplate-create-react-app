@@ -23,6 +23,13 @@ app.use(express.static('/build/'));
 app.set('port', process.env.PORT || 4000);
 
 app.locals.title = 'APP NAME';
+//PLACE ENDPOINT CODE HERE
+
+//END ENDPOINT CODE
+app.get('/*', (request, response) => {
+  // eslint-disable-next-line
+  response.sendFile('./build/index.html', { 'root': __dirname });
+});
 
 app.listen(app.get('port'), () => {
   // eslint-disable-next-line no-console
